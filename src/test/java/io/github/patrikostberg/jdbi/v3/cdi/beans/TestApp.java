@@ -22,7 +22,7 @@ public class TestApp {
   private TestDao testTestDao;
 
   public String getVersionDefaultHandle() {
-    return defaultHandleProvider.getJdbiHandle().createQuery("select current_user() as current_user from dual").mapTo(String.class).first();
+    return defaultHandleProvider.getJdbiHandle().createQuery("select user").mapTo(String.class).first();
   }
 
   public String getVersionDefaultDao() {
@@ -30,7 +30,7 @@ public class TestApp {
   }
 
   public String getVersionTestHandle() {
-    return testHandleProvider.getJdbiHandle().createQuery("select current_user() as current_user from dual").mapTo(String.class).first();
+    return testHandleProvider.getJdbiHandle().createQuery("select user").mapTo(String.class).first();
   }
 
   public String getVersionTestDao() {
